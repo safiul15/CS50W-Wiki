@@ -1,0 +1,6 @@
+{% load static %}
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>{% block title %}Wiki{% endblock %}</title><link rel="stylesheet" href="{% static 'encyclopedia/styles.css' %}"></head>
+<body><div class="page-shell"><aside class="sidebar"><a class="brand" href="{% url 'index' %}">Wiki<span>.</span></a>
+<form action="{% url 'search' %}" method="get" class="search-form"><input type="search" name="q" placeholder="Search Encyclopedia" aria-label="Search encyclopedia"><button type="submit">⌕</button></form>
+<nav><a href="{% url 'index' %}">Home</a><a href="{% url 'new_page' %}">Create New Page</a><a href="{% url 'random_page' %}">Random Page</a></nav><div class="sidebar-note">A simple encyclopedia powered by Markdown.</div></aside>
+<main class="main-content">{% block body %}{% endblock %}<footer>CS50W · Wiki Encyclopedia</footer></main></div></body></html>

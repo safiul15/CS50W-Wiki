@@ -1,0 +1,4 @@
+{% extends "encyclopedia/layout.html" %}{% block title %}Create New Page · Wiki{% endblock %}{% block body %}
+<header class="page-heading"><p class="eyebrow">CONTRIBUTE</p><h1>Create a New Page</h1><p class="subtitle">Add a topic to the encyclopedia using Markdown.</p></header>
+{% if error %}<div class="alert" role="alert">{{ error }}</div>{% endif %}
+<form method="post" class="editor-form">{% csrf_token %}<label for="title">Page title</label><input id="title" type="text" name="title" value="{{ title|default:'' }}" placeholder="e.g. Machine Learning" required><label for="content">Markdown content</label><textarea id="content" name="content" rows="14" placeholder="# Heading&#10;&#10;Write your entry here..." required>{{ content|default:'' }}</textarea><div class="form-actions"><button class="primary-button" type="submit">Save Page</button><a class="cancel-link" href="{% url 'index' %}">Cancel</a></div></form>{% endblock %}

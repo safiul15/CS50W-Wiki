@@ -1,0 +1,4 @@
+{% extends "encyclopedia/layout.html" %}{% block title %}Edit {{ title }} · Wiki{% endblock %}{% block body %}
+<header class="page-heading"><p class="eyebrow">UPDATE ENTRY</p><h1>Edit {{ title }}</h1><p class="subtitle">Update the Markdown content below.</p></header>
+{% if error %}<div class="alert" role="alert">{{ error }}</div>{% endif %}
+<form method="post" class="editor-form">{% csrf_token %}<label for="content">Markdown content</label><textarea id="content" name="content" rows="18" required>{{ content }}</textarea><div class="form-actions"><button class="primary-button" type="submit">Save Changes</button><a class="cancel-link" href="{% url 'entry' title %}">Cancel</a></div></form>{% endblock %}

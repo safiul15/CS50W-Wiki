@@ -1,0 +1,3 @@
+{% extends "encyclopedia/layout.html" %}{% block title %}All Pages · Wiki{% endblock %}{% block body %}
+<header class="page-heading"><p class="eyebrow">DISCOVER</p><h1>All Pages</h1><p class="subtitle">Explore the encyclopedia's collection of topics.</p></header>
+<div class="entry-list">{% for entry in entries %}<a class="entry-card" href="{% url 'entry' entry %}"><span>{{ entry }}</span><span class="arrow">→</span></a>{% empty %}<p class="empty-state">No entries yet. Create the first encyclopedia page.</p>{% endfor %}</div>{% endblock %}

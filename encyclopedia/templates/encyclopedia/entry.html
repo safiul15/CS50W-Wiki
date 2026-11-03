@@ -1,0 +1,2 @@
+{% extends "encyclopedia/layout.html" %}{% block title %}{{ title }} · Wiki{% endblock %}{% block body %}
+<article class="article"><div class="article-actions"><span class="eyebrow">ENCYCLOPEDIA ENTRY</span><a class="text-link" href="{% url 'edit_page' title %}">Edit this page ↗</a></div><h1>{{ title }}</h1><div class="markdown-content">{{ content|safe }}</div></article>{% endblock %}
